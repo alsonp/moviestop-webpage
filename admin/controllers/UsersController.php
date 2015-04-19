@@ -94,6 +94,7 @@ $model=$this->loadModel($id);
 if(isset($_POST['Users']))
 {
 $model->attributes=$_POST['Users'];
+$model->password = md5($model->password)
 if($model->save())
 $this->redirect(array('view','id'=>$model->id));
 }
